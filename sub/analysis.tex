@@ -1,0 +1,202 @@
+\documentclass[../main]{subfiles}
+\begin{document}
+
+\chapter{雷达录取数据分析实验}%
+\label{cha:analysis}
+
+\section{实验要求}%
+\label{sec:requirement}
+
+\begin{itemize}
+  \item 掌握脉冲多普勒雷达测量目标移动速度与测量目标距离的基本原理。
+  \item 掌握雷达录取数据的上位机软件的使用方法，将雷达录取数据记录于电脑。
+  \item 学会使用 Matlab 软件对雷达录取数据进行分析和处理。
+\end{itemize}
+
+\section{实验方法}%
+\label{sec:\arabic{chapter}method}
+
+\subsection{实验时间}%
+\label{sub:\arabic{chapter}time}
+
+9:50--10:38。
+
+\subsection{人员分工}%
+\label{sub:\arabic{chapter}people}
+
+\begin{table}[htbp]
+  \centering
+  \caption{人员分工}%
+  \label{tab:\arabic{chapter}people}
+  \tiny
+  \csvautobooktabular{tab/\arabic{chapter}people.csv}
+\end{table}
+
+\subsection{实验过程}%
+\label{sub:\arabic{chapter}process}
+
+\begin{enumerate}
+  \item 实验开始，指挥的同学明确各人职责，各单位负责人员就位，远距离通讯组同
+    学建立电话联系。
+  \item 打开电脑与雷达，各单位听从总指挥，首先进行一次流程测试，无误后开始正
+    式实验。
+  \item 指挥示意开始，目标同学首先以较慢速度往返运动进行雷达测速实验。
+  \item 手动计时同学记录目标同学的运动时间，除以距离算出平均速度，同时雷达进
+    行测速，负责计算机操控的同学对雷达录取结果保存、重新命名。
+  \item 目标同学逐次加快运动速度，重复上述过程。
+  \item 一名同学负责及时对比测量值与计算值，剔除严重不符合实际的数据组。
+  \item 进行雷达测距实验，目标同学在不同位置处小幅度前后晃动。
+  \item 负责计算机操控的同学听从指挥点击记录，保存雷达录取数据，对文件重新命
+    名。
+\end{enumerate}
+
+\subsection{数据记录}%
+\label{sub:\arabic{chapter}record}
+
+数据记录见AD\_Data.txt。以汽车经过的数据为例。
+
+\section{实验分析}%
+\label{sec:\arabic{chapter}analysis}
+
+如图~\ref{fig:beat}，在该锯齿波线性调频连续波雷达中，单通道结构比双通道结构更
+为简单，易于实现大时宽带宽积信号的处理。
+
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}[htbp]{0.45\linewidth}
+    \centering
+    \includegraphics[
+      width = \linewidth,
+    ]{beat/iq}
+    \caption{I、Q通道}%
+    \label{fig:beat/iq}
+  \end{subfigure}
+  \quad
+  \begin{subfigure}[htbp]{0.45\linewidth}
+    \centering
+    \includegraphics[
+      width = \linewidth,
+    ]{beat/dc}
+    \caption{差拍信号去直流}%
+    \label{fig:beat/dc}
+  \end{subfigure}
+  \caption{差拍信号波形}%
+  \label{fig:beat}
+\end{figure}
+
+如图~\ref{fig:mti}，杂波对消前噪声干扰较多，当我们采用相参处理，使各杂波相位
+相反，完成杂波对消后，可以有效地去除噪声干扰，提高信噪比，有利于目标信息的提
+取。
+
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}[htbp]{0.45\linewidth}
+    \centering
+    \includegraphics[
+      width = \linewidth,
+    ]{mti/before}
+    \caption{杂波对消前}%
+    \label{fig:mti/before}
+  \end{subfigure}
+  \quad
+  \begin{subfigure}[htbp]{0.45\linewidth}
+    \centering
+    \includegraphics[
+      width = \linewidth,
+    ]{mti/after}
+    \caption{杂波对消后}%
+    \label{fig:mti/after}
+  \end{subfigure}
+  \caption{动目标识别}%
+  \label{fig:mti}
+\end{figure}
+
+如图~\ref{fig:doppler}，雷达对信号匹配滤波完成脉冲压缩，杂波对消后，再进行
+MTD，即可得到差拍频率-多普勒频率二维空间输出强度波形图。
+
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}[htbp]{0.45\linewidth}
+    \centering
+    \includegraphics[
+      width = \linewidth,
+    ]{doppler/3d}
+    \caption{3维}%
+    \label{fig:doppler/3d}
+  \end{subfigure}
+  \quad
+  \begin{subfigure}[htbp]{0.45\linewidth}
+    \centering
+    \includegraphics[
+      width = \linewidth,
+    ]{doppler/2d}
+    \caption{2维}%
+    \label{fig:doppler/2d}
+  \end{subfigure}
+  \caption{差拍-多普勒输出}%
+  \label{fig:doppler}
+\end{figure}
+
+如图~\ref{fig:mtd}，差拍频率对应延时，通过计算即可得到目标与雷达间距离。
+
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}[htbp]{0.45\linewidth}
+    \centering
+    \includegraphics[
+      width = \linewidth,
+    ]{mtd/3d}
+    \caption{3维}%
+    \label{fig:mtd/3d}
+  \end{subfigure}
+  \quad
+  \begin{subfigure}[htbp]{0.45\linewidth}
+    \centering
+    \includegraphics[
+      width = \linewidth,
+    ]{mtd/2d}
+    \caption{2维}%
+    \label{fig:mtd/2d}
+  \end{subfigure}
+  \caption{动目标检测}%
+  \label{fig:mtd}
+\end{figure}
+
+最终实验结果如表~\ref{tab:result}。
+
+\begin{table}[htbp]
+  \centering
+  \caption{实验结果}%
+  \label{tab:result}
+  \csvautobooktabular[respect percent]{tab/result.csv}
+\end{table}
+
+\section{实验讨论}%
+\label{sec:\arabic{chapter}discuss}
+
+该实验实质是利用雷达测得的数据进行雷达仿真。
+
+值得注意的是真正的雷达与该仿真算法相同但实现手段不一样。仿真是在通用计算机上
+通过通用的科学数据计算软件计算结果，但实际的雷达一般是利用专用的大规模集成电
+路或可编程逻辑门阵列依靠硬件的方式实现与软件等效的结果。其好处在与高效性。例
+如实际雷达是实时输出结果的，而软件仿真需要等待较长时间。
+
+\section{实验小结}%
+\label{sec:\arabic{chapter}conclusion}
+
+为了方便结果的输出对原 matlab 代码进行了修改，主要目的是为了实现结果的自动化
+输出，减轻论文插图插表的负担。包括：
+
+\begin{itemize}
+  \item 图片自动保存到指定文件夹下和自动插入到论文指定位置。通过在 matlab
+    外用一个 shell 脚本新建文件夹，调用 matlab 输出图片，修改后再删除中间文件
+    。原先的程序是8张图片在4个窗口中显示出来后用户需要手动截屏或鼠标点击菜单
+    栏的图片导出；
+  \item 实验结果自动保存到指定文件夹下。原先和图片输出在一起，显示在窗口里；
+  \item 对程序进行了格式的规范化。
+\end{itemize}
+
+包括之前实验的绘图程序在内的所有程序一并列出在附录~\ref{cha:code}。
+
+\end{document}
+

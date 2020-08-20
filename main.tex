@@ -1,0 +1,75 @@
+\documentclass{njustthesis}
+\njustsetup{%
+  author = 吴振宇,
+  id = 916101630117,
+  discipline = 电子信息工程,
+  title = 雷达原理（学分：3.5）,
+  subtitle = 教学大纲编号：04041904--0,
+  title* = {Radar Principles},
+  cover-title = {雷达原理实验报告},
+  abstract-prefix = 课设论文,
+  header-title = 雷达原理课程实验报告,
+  supervisor = 许志勇,
+  supervisor-title = 副教授,
+  supervisor-title = 副教授,
+  judge = 许志勇,
+  judge-title = 副教授,
+  signature = \includegraphics{signature},
+}
+\usepackage[refpage]{nomencl}
+\makenomenclature%
+\renewcommand{\nomname}{术语}
+\renewcommand{\pagedeclaration}{，第1次出现在页~}
+\usepackage{minted}
+\setminted{%
+  breakanywhere,
+  breakanywheresymbolpre = {},
+  breaksymbolleft = {},
+  breaksymbolindentleftnchars = 0,
+}
+\usepackage{boxie}
+\usepackage{siunitx}
+\sisetup{mode = text}
+\usepackage{cases}
+\usepackage{csvsimple}
+\usepackage{booktabs}
+\usepackage{subfiles}
+\usepackage{subcaption}
+\usepackage{fvextra}
+\fvset{%
+  highlightcolor = {yellow!20, white},
+}
+\newtheorem{definition}{定义}
+\newtheorem{theorem}{定理}
+\begin{document}
+
+\maketitle
+\copyrightpage%
+\subfile{sub/abstract}
+
+{%
+  \frontmatter
+  \tableofcontents
+  \listoffigures
+  \listoftables
+  \printnomenclature%
+
+  \mainmatter%
+  \subfile{sub/introduction}
+  \subfile{sub/velocity}
+  \subfile{sub/distance}
+  \subfile{sub/analysis}
+  \subfile{sub/conclusion}
+  \subfile{sub/gain}
+
+  \backmatter%
+  \bibliography{bib/main}
+  \subfile{sub/acknowledgement}
+}
+
+\appendix
+\subfile{sub/report}
+\subfile{sub/code}
+
+\end{document}
+

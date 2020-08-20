@@ -1,0 +1,108 @@
+\documentclass[../main]{subfiles}
+\begin{document}
+
+\chapter{单目标测速实验}%
+\label{cha:velocity}
+
+\section{实验要求}%
+\label{sec:requirement}
+
+\begin{itemize}
+  \item 掌握脉冲多普勒雷达测量目标移动速度的基本原理。
+  \item 了解雷达测速基本原理，通过实际操作掌握相关仪器仪表使用方法。
+  \item 了解雷达系统信号测量目标距离的软硬件条件及具体实现方法。
+\end{itemize}
+
+\section{实验方法}%
+\label{sec:\arabic{chapter}method}
+
+\subsection{实验时间}%
+\label{sub:\arabic{chapter}time}
+
+9:50--10:15。
+
+\subsection{人员分工}%
+\label{sub:\arabic{chapter}people}
+
+\begin{table}[htbp]
+  \centering
+  \caption{人员分工}%
+  \label{tab:\arabic{chapter}people}
+  \tiny
+  \csvautobooktabular{tab/\arabic{chapter}people.csv}
+\end{table}
+
+\subsection{实验过程}%
+\label{sub:\arabic{chapter}process}
+
+\begin{enumerate}
+  \item 实验准备，通过博士能 ELITE 激光测距仪测量，并使用白色粉笔标定距离。
+  \item 实验开始，指挥的同学明确各人职责，各单位负责人员就位，远距离通讯组同
+    学建立电话联系。
+  \item 打开电脑与雷达，各单位听从总指挥，首先进行一次流程测试，无误后开始正
+    式实验。
+  \item 指挥示意开始，目标同学首先以较慢速度往返运动。
+  \item 手动计时同学记录目标同学的运动时间，除以距离算出平均速度，同时雷达进
+    行测速，负责数据记录的同学对测得结果拍照记录。
+  \item 目标同学逐次加快运动速度，或骑自行车，或有卡车经过，重复上述过程。
+\end{enumerate}
+
+\subsection{数据记录}%
+\label{sub:\arabic{chapter}record}
+
+\begin{table}[htbp]
+  \centering
+  \caption{数据记录}%
+  \label{tab:\arabic{chapter}record}
+  \tiny
+  \csvautobooktabular[respect percent]{tab/\arabic{chapter}record.csv}
+\end{table}
+
+\section{实验分析}%
+\label{sec:\arabic{chapter}analysis}
+
+误差如图~\ref{fig:\arabic{chapter}record}。
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[
+    width = 0.8\linewidth,
+  ]{\arabic{chapter}record}
+  \caption{速度误差}%
+  \label{fig:\arabic{chapter}record}
+\end{figure}
+
+\section{实验讨论}%
+\label{sec:\arabic{chapter}discuss}
+
+误差原因主要如下：
+
+\begin{itemize}
+  \item 雷达本身的系统误差，已经发现有些时候速度显示数据只会显示几个固定的常
+    数，不能连续变化；
+  \item 计时的随机误差；
+  \item 测距的随机误差；
+  \item 志愿者不能保持匀速直线运动；
+  \item 环境噪声；
+  \item 实验数据读取的粗大误差。尽管我希望用电脑打字的方式记录数据，但实验记
+    录人员坚持要用笔纸记录数据，理由是实验报告最后要附上记录数据的纸的照片。
+    结果实验结束后他将照片上传到群后才发现字迹根本无法有效辨识，尤其是7和1难
+    以区分。尽管我已经很努力地辨认了，但仍然不敢保证能全部识别正确。
+\end{itemize}
+
+\section{实验小结}%
+\label{sec:\arabic{chapter}conclusion}
+
+针对误差，解决方案如下：
+
+\begin{itemize}
+  \item 修好雷达；
+  \item 换用更精确的计时仪器；
+  \item 换用更精确的测距仪器；
+  \item 选择能匀速直线运动的设备代替志愿者；
+  \item 选择环境噪声更小的环境进行实验；
+  \item 以后实验采取电子记录的方式。
+\end{itemize}
+
+\end{document}
+

@@ -1,0 +1,99 @@
+\documentclass[../main]{subfiles}
+\begin{document}
+
+\chapter{单目标测距实验}%
+\label{cha:distance}
+
+\section{实验要求}%
+\label{sec:requirement}
+
+\begin{itemize}
+  \item 掌握脉冲多普勒雷达测量目标距离的基本原理。
+  \item 了解雷达测距的基本原理，通过实际操作掌握雷达系统的使用方法。
+\end{itemize}
+
+\section{实验方法}%
+\label{sec:\arabic{chapter}method}
+
+\subsection{实验时间}%
+\label{sub:\arabic{chapter}time}
+
+10:26--10:38。
+
+\subsection{人员分工}%
+\label{sub:\arabic{chapter}people}
+
+\begin{table}[htbp]
+  \centering
+  \caption{人员分工}%
+  \label{tab:\arabic{chapter}people}
+  \tiny
+  \csvautobooktabular{tab/\arabic{chapter}people.csv}
+\end{table}
+
+\subsection{实验过程}%
+\label{sub:\arabic{chapter}process}
+
+\begin{enumerate}
+  \item 实验开始，指挥的同学明确各人职责，各单位负责人员就位，远距离通讯组同学建立电话联系。
+  \item 打开电脑与雷达，各单位听从总指挥，首先进行一次流程测试，无误后开始正式实验。
+  \item 指挥示意开始，目标同学在指定位置处小幅度前后晃动。
+  \item 两侧通讯人员沟通后，雷达处记录同学记录目标志愿者实际所在位置和雷达测得距离数据，并对测得结果拍照记录。
+  \item 目标同学更换位置前后晃动，重复上述过程。
+  \item 一名同学负责及时对比测量值与实际值，剔除严重不符合实际的数据组。
+\end{enumerate}
+
+\subsection{数据记录}%
+\label{sub:\arabic{chapter}record}
+
+\begin{table}[htbp]
+  \centering
+  \caption{数据记录}%
+  \label{tab:\arabic{chapter}record}
+  \csvautobooktabular[respect percent]{tab/\arabic{chapter}record.csv}
+\end{table}
+
+\section{实验分析}%
+\label{sec:\arabic{chapter}analysis}
+
+误差如图~\ref{fig:\arabic{chapter}record}。
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[
+    width = 0.8\linewidth,
+  ]{\arabic{chapter}record}
+  \caption{距离误差}%
+  \label{fig:\arabic{chapter}record}
+\end{figure}
+
+\section{实验讨论}%
+\label{sec:\arabic{chapter}discuss}
+
+误差原因主要如下：
+
+\begin{itemize}
+  \item 雷达精度不够高；
+  \item 测距的随机误差；
+  \item 志愿者不能保持在原地切向运动；
+  \item 环境噪声；
+  \item 距离过远时应考虑地球曲率和大气折射的影响；
+  \item 实验数据读取的粗大误差。最后一组数据明显不对。
+\end{itemize}
+
+\section{实验小结}%
+\label{sec:\arabic{chapter}conclusion}
+
+针对误差，解决方案如下：
+
+\begin{itemize}
+  \item 换精度更高的雷达；
+  \item 换用更精确的测距仪器；
+  \item 选择能在原地切向运动的设备代替志愿者；
+  \item 选择环境噪声更小的环境进行实验；
+  \item 本实验距离不够远，修正意义不大；
+  \item 采取 Tauta 法则剔除粗大误差。
+\end{itemize}
+
+\end{document}
+

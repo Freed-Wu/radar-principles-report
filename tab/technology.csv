@@ -1,0 +1,9 @@
+工作频率,Ku 波段
+测距范围,$\geqslant \SI{200}{\m}$(汽车)，$\geqslant \SI{100}{\m}$(人)
+距离分辨率,$\leqslant \SI{10}{\m}$
+测速范围,$\SI{2}{\m/\s} \sim \SI{20}{\m/\s}$
+速度分辨率,$\leqslant \SI{2}{\m/\s}$
+重量,$\leqslant \SI{10}{\kg}$（不包括电池、三脚架）
+功耗,$\leqslant \SI{30}{\W}$
+电源输入,电池供电
+适用温度范围,$-10^\circ\mathrm{C} \sim 55^\circ\mathrm{C}$
